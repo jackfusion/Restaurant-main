@@ -1,0 +1,11 @@
+<div class="card space shadow-sm" [routerLink]="'product/' + product?.id">
+  <div class="card-body">
+    <h4 class="card-title">{{ product?.name}}</h4>
+    <img [src]="imagePath" alt="{{ product?.name }}" class="img-responsive float-end card-img">
+    <div class="card-text">
+      <p>{{product?.description}}</p>
+      <p>$ {{product?.price}}</p>
+      <span [innerHTML]="product?.imageDescription"></span>
+    </div>
+  </div>
+</div>
