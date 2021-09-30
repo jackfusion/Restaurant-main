@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../../product.model';
 
 @Component({
   selector: 'app-product',
@@ -7,13 +7,10 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() product: Product | undefined;
-  imagePath: string = "";
 
   constructor() { }
 
   ngOnInit(): void {
-    this.imagePath = this.product?.imagePath ?? '';
   }
 
 }

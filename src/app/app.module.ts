@@ -1,37 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { ProductPageComponent } from './components/product-page/product-page.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductsComponent } from './components/products/products.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-
-import { MatCardModule } from '@angular/material/card';
-import { MatSelectModule } from '@angular/material/select';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { ProductsComponent } from './component/products/products.component';
+import { ProductComponent } from './component/products/product-page/product/product.component';
+import { ProductPageComponent } from './component/products/product-page/product-page.component';
+import { CartComponent } from './component/cart/cart.component';
+import { CartEditComponent } from './component/cart/cart-edit/cart-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomepageComponent,
-    ProductPageComponent,
-    ProductComponent,
+    AppHeaderComponent,
     ProductsComponent,
-    LoginComponent,
-    RegisterComponent,
+    ProductComponent,
+    ProductPageComponent,
+    CartComponent,
+    CartEditComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatSelectModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

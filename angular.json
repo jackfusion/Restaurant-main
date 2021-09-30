@@ -3,32 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RestaurantV03": {
+    "Restaurant": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:component": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        },
         "@schematics/angular:application": {
-          "strict": true
+          "strict": true,
+          "skipTests": true
         }
       },
       "root": "",
@@ -38,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RestaurantV03",
+            "outputPath": "dist/Restaurant",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -48,14 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/@popperjs/core/dist/umd/popper.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -94,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "RestaurantV03:build:production"
+              "browserTarget": "Restaurant:build:production"
             },
             "development": {
-              "browserTarget": "RestaurantV03:build:development"
+              "browserTarget": "Restaurant:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -105,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RestaurantV03:build"
+            "browserTarget": "Restaurant:build"
           }
         },
         "test": {
@@ -128,5 +104,5 @@
       }
     }
   },
-  "defaultProject": "RestaurantV03"
+  "defaultProject": "Restaurant"
 }
