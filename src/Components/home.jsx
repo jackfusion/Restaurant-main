@@ -3,7 +3,7 @@ import Products from './products';
 
 class home extends React.Component {
 
-    return() {
+    render() {
             return (
                 <React.Fragment>
                     <div className="header text-center">

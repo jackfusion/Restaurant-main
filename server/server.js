@@ -13,7 +13,7 @@ const products = [{
     price: 12.99,
     //size: [Size.SMALL, Size.MEDIUM, Size.LARGE],
     toppings: [],
-    imagePath: '../public/images/pizza.jpg',
+    imagePath: '../../images/pizza.jpg',
     imageDescription: 'Photo by <a href="https://unsplash.com/@karthikgarikapati?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Karthik Garikapati</a> on <a href="https://unsplash.com/license?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
 },
     {
@@ -23,7 +23,7 @@ const products = [{
     price: 15.99,
     //size: [Size.SMALL, Size.MEDIUM, Size.LARGE],
     toppings: [],
-    imagePath: '../public/images/ben-lei-flFd8L7_B3g-unsplash.jpg',
+    imagePath: '../../images/ben-lei-flFd8L7_B3g-unsplash.jpg',
     imageDescription: 'Photo by <a href="https://unsplash.com/@bleiplays33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ben Lei</a> on <a href="https://unsplash.com/s/photos/pasta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
     }];
 app.get("/products", (req, res) => res.send(products));
