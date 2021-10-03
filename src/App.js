@@ -1,7 +1,6 @@
 import './App.css';
-import Product from './Components/products';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Link
@@ -9,28 +8,41 @@ import {
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import axios from "axios";
-// function App() {
-//   return
-//       <Product></Product>
-// }
-// eslint-disable-next-line no-undef
+import Header from "./Components/header";
+import Home from "./Components/home";
+import Cart from "./Components/cart";
+import Login from "./Components/login";
+import Register from "./Components/register";
+import Product from "./Components/product";
+
+
 class App extends Component {
-  render() {
+  state = {
+        products: [],
+  };
+  componentDidMount() {
+    axios
+      .get('http://localhost:3001/products')
+      .then((res) => {
+        this.setState({ products: res.data });
+      })
+      .catch((err) => console.log(err));
+  }
+  render(){
     
     return (
-      state = {
-        procducts: [],
-      };
-      
-    componentDidMount() {
-      axios.get('http://localhost:3001/products')
-        .then(res, err) => {
-        this.setState({ products: res.data})
-      });
-      }
-      <React.Fragment>
-        <Product products={this.state.products} />
-      </React.Fragment>
+      <BrowserRouter>
+        <React.Fragment>
+          <Header />
+            <Switch>
+              <Route path='/' component={Home} exact />
+              <Route path='/product' component={Product} />
+              <Route path='/cart' component={Cart} />
+              <Route path='/login' component={Login} />
+              <Route path='/Register' component={Register} />
+            </Switch>
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }
