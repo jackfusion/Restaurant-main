@@ -13,21 +13,10 @@ import Home from "./Components/home";
 import Cart from "./Components/cart";
 import Login from "./Components/login";
 import Register from "./Components/register";
-import Product from "./Components/product";
+import Products from "./Components/products";
 
 
 class App extends Component {
-  state = {
-        products: [],
-  };
-  componentDidMount() {
-    axios
-      .get('http://localhost:3001/products')
-      .then((res) => {
-        this.setState({ products: res.data });
-      })
-      .catch((err) => console.log(err));
-  }
   render(){
     
     return (
@@ -36,7 +25,7 @@ class App extends Component {
           <Header />
             <Switch>
               <Route path='/' component={Home} exact />
-              <Route path='/product' component={Product} />
+              <Route path='/products' component={Products} />
               <Route path='/cart' component={Cart} />
               <Route path='/login' component={Login} />
               <Route path='/Register' component={Register} />

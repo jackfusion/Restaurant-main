@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import Product from './product';
+import axios from 'axios';
 
 class Products extends Component {
+    state = {
+        products: [],
+    };
+    componentDidMount() {
+        axios
+        .get('http://localhost:3001/products')
+        .then((res) => {
+            this.setState({ products: res.data });
+        })
+        .catch((err) => console.log(err));
+        }
+
     render() {
-        console.log("Products", this.props);
         return (
             <React.Fragment>
-                {this.props.products.map((p) => (
+                {this.state.products.map((p) => (
                     <Product key={p.id} product={p} />
                 ))}
             </React.Fragment>
