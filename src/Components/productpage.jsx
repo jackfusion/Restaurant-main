@@ -1,16 +1,22 @@
 import React from 'react'
-import { useParams } from 'react-router';
+import Products from '../../server/products';
 
-
-    const productpage = ({ match }) => {
-        const {
-            params: { id },
-        } = match;
-        //const Product = props;
-    
+    const productpage = props => {
             return (
                 <React.Fragment>
-                    <h2>{id} {props.product.name}</h2>
+                   <div className="container" >
+                    <div className="card space shadow-sm">
+                        <div className="card-body">
+                            <h4 className="card-title">{ Products.name}</h4>
+                            <img src={props.imagePath} alt={ props.name } className="img-responsive float-end card-img" />
+                            <div className="card-text">
+                                <p>{props.description}</p>
+                                <p>$ {props.price}</p>
+                                <span dangerouslySetInnerHTML={{__html: props.imageDescription }}></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </React.Fragment>
             );
     };
