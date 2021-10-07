@@ -1,24 +1,41 @@
 import React from 'react'
-import Products from '../../server/products';
+import { useParams } from 'react-router';
+import axios from 'axios';
+import Product from './product';
 
-    const productpage = props => {
-            return (
-                <React.Fragment>
-                   <div className="container" >
-                    <div className="card space shadow-sm">
-                        <div className="card-body">
-                            <h4 className="card-title">{ Products.name}</h4>
-                            <img src={props.imagePath} alt={ props.name } className="img-responsive float-end card-img" />
-                            <div className="card-text">
-                                <p>{props.description}</p>
-                                <p>$ {props.price}</p>
-                                <span dangerouslySetInnerHTML={{__html: props.imageDescription }}></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </React.Fragment>
-            );
+
+class productpage extends React.Component {
+    state = { products: [], };
+    server = "http://localhost:3001/products"
+    handleBlur = (id) => {
+
+            axios.get(this.server + id)
+                .then((res, err) => {
+                    const products = res.data;
+                    this.setState({ products });
+                });
     };
+    render() {
+        return (
+            <React.Fragment>
+                
+                {this.state.products.map(e => this.handleBlur(e.name))}
+            </React.Fragment>
+        );
+    };
+}
 
     export default productpage;
+// const ProductPage = ({ match }) => {
+//     const {
+//         params: { id },
+//         params: { name },
+//     } = match;
+
+//     return (
+//         <React.Fragment>
+//             Products detail: {id} {match.name}
+//         </React.Fragment>)
+// }
+
+// export default ProductPage;
