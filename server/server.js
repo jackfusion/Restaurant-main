@@ -27,5 +27,13 @@ const products = [{
     imageDescription: 'Photo by <a href="https://unsplash.com/@bleiplays33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ben Lei</a> on <a href="https://unsplash.com/s/photos/pasta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
     }];
 app.get("/products", (req, res) => res.send(products));
+app.get("/products/:id", (req, res) => {
+    const id = req.params.id;
+    const product = products.find((p) => p.id === id);
+
+    if (product) res.send(product);
+
+    res.status(404).send(`Product with id = ${id} dosen't exist`);
+});
 
 app.listen(PORT, () => console.log('Server running: ' + PORT));

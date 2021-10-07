@@ -9,17 +9,17 @@ class productpage extends React.Component {
     server = "http://localhost:3001/products"
     handleBlur = (id) => {
 
-            axios.get(this.server + id)
-                .then((res, err) => {
-                    const products = res.data;
-                    this.setState({ products });
-                });
+        axios
+            .get(this.server + "/" + id)
+            .then((res, err) => {
+                const products = res.data;
+                this.setState({ products });
+            });
     };
     render() {
         return (
             <React.Fragment>
-                
-                {this.state.products.map(e => this.handleBlur(e.name))}
+                {pramas.name}
             </React.Fragment>
         );
     };
