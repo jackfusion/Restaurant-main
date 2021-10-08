@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
