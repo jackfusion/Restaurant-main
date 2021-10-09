@@ -8,7 +8,7 @@ class Products extends Component {
     };
     componentDidMount() {
         axios
-            .get('http://localhost:3001/products')
+            .get('https://fast-chamber-72182.herokuapp.com/products')
             .then((res) => {
                 this.setState({ products: res.data });
             })
